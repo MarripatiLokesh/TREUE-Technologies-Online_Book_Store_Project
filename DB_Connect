@@ -1,0 +1,35 @@
+package com.DB;
+
+import java.sql.Connection;
+import java.sql.Driver;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class DB_Connect {
+	//public static void main(String []args) {
+	private static Connection conn;
+	public static Connection getConn() {
+		 try {
+			 
+		 Class.forName("com.mysql.cj.jdbc.Driver");
+		 String url="jdbc:mysql://localhost:3306/ebook_app";
+		 String username = "root";
+		 String password="Lokesh237@";
+			 conn=DriverManager.getConnection(url,username,password);
+		/*	Statement sta = con.createStatement();
+			String sql = "INSERT INTO student VALUES"+"(103,'Naveen')";
+			sta.addBatch(sql);
+			sta.execute(sql);
+			
+			System.out.println("connected");
+		 		 */
+		 }
+		 catch(ClassNotFoundException | SQLException e){
+		   e.printStackTrace();
+			// System.out.println("connected");
+			 
+		 }
+		 return conn;
+	 }
+}
