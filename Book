@@ -1,0 +1,16 @@
+package com.DAO;
+
+import java.util.List;
+
+import com.entity.Book_Dtls;
+
+public interface BookDAO {
+public boolean addBooks(Book_Dtls b);
+
+public List<Book_Dtls> getAllBooks();
+
+public Book_Dtls gatBookById(int id);
+
+public boolean updateEditBooks(Book_Dtls b);
+
+}
